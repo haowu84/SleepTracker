@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-button expand="full" (click)="shareSleepiness()"
+          ><ion-icon name="share-social-outline"></ion-icon
+        ></ion-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Sleepiness</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="allSleepinessData[allSleepinessData.length-1]">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Latest Sleepiness Record</ion-card-subtitle>
+        <ion-card-title
+          >{{allSleepinessData[allSleepinessData.length-1].dateString()}}</ion-card-title
+        >
+      </ion-card-header>
+      <ion-card-content>
+        {{allSleepinessData[allSleepinessData.length-1].summaryString()}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item>
+    <ion-range
+      min="1"
+      max="7"
+      pin
+      color="secondary"
+      snaps
+      color="secondary"
+      [(ngModel)]="level"
+    >
+      <ion-label slot="start">1</ion-label>
+      <ion-label slot="end">7</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item *ngIf="level">
+    <ion-label class="ion-text-wrap">{{level}}: {{scale[level]}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-button expand="full" (click)="logSleepiness()"
+      >LOG SLEEPINESS</ion-button
+    >
+  </ion-item>
+</ion-content>

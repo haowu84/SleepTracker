@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sleep Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Sleep Data</ion-label>
+      <ion-toggle [(ngModel)]="sleep"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Sleepiness Data</ion-label>
+      <ion-toggle [(ngModel)]="sleepiness"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="sleep && sleepiness">
+    <ion-card *ngFor="let data of allSleepData">
+      <ion-card-header>
+        <ion-card-title>{{data.dateString()}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{data.summaryString()}} </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="sleep && !sleepiness">
+    <ion-card *ngFor="let data of allOvernightData">
+      <ion-card-header>
+        <ion-card-title>{{data.dateString()}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{data.summaryString()}} </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="!sleep && sleepiness">
+    <ion-card *ngFor="let data of allSleepinessData">
+      <ion-card-header>
+        <ion-card-title>{{data.dateString()}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{data.summaryString()}} </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

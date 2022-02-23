@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-button expand="full" (click)="shareSleep()"
+          ><ion-icon name="share-social-outline"></ion-icon
+        ></ion-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Sleep</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="allOvernightData[allOvernightData.length-1]">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Latest Sleep Record</ion-card-subtitle>
+        <ion-card-title
+          >{{allOvernightData[allOvernightData.length-1].dateString()}}</ion-card-title
+        >
+      </ion-card-header>
+      <ion-card-content>
+        {{allOvernightData[allOvernightData.length-1].summaryString()}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Start Time</ion-label>
+    <ion-datetime
+      display-format="MM/DD/YYYY HH:mm"
+      picker-format="MM/DD/YY HH:mm"
+      [(ngModel)]="startTime"
+    ></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>End Time</ion-label>
+    <ion-datetime
+      display-format="MM/DD/YYYY HH:mm"
+      picker-format="MM/DD/YY HH:mm"
+      [(ngModel)]="endTime"
+    ></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-button expand="full" (click)="logSleep()"
+      >LOG OVERNIGHT SLEEP</ion-button
+    >
+  </ion-item>
+</ion-content>

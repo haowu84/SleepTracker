@@ -1,3 +1,20 @@
+# Ionic #
+**Log Overnight Sleep**\
+Record Sleep Time
+
+**Log Sleepiness**\
+Record Level of Sleepiness
+
+**View Logged Data**\
+View Recorded Sleep Time and Level of Sleepiness
+
+**Native Device**\
+Social Sharing Plugin enable Data Sharing
+
+**Capacitor Storage**\
+Local Storage
+
+# References #
 https://ionicframework.com/docs/api/button
 https://ionicframework.com/docs/api/card
 https://ionicframework.com/docs/api/datetime

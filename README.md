@@ -14,7 +14,7 @@
 - Log what time the user went to bed and when the user woke up with datetime pickers
 
 ### Log Sleepiness During the Day
-- log how sleepy the user feel throughout the day according to the Stanford Sleepiness Scale, on the scale of 1-7 with range sliders
+- Log how sleepy the user feel throughout the day according to the Stanford Sleepiness Scale, on the scale of 1-7 with range sliders
 
 ### View Logged Data
 - View the overnight sleep and sleepiness data together or separately with toggles

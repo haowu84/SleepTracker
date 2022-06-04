@@ -1,30 +1,27 @@
-# Ionic #
-**Log Overnight Sleep**\
-Record Sleep Time
+# Sleep Tracker with Ionic
 
-**Log Sleepiness**\
-Record Level of Sleepiness
+## Structure
+- sleeptracker/src/app/data: folder that contains 3 classes: sleep-data, overnight-sleep-data, and stanford-sleepiness-data
+- sleeptracker/src/app/services: folder that contains 1 service that provides static variables for storing the logged data 
+- sleeptracker/src/app/pages: folder that contains 3 components: sleep-page, sleepiness-page, and sleep-data-page
 
-**View Logged Data**\
-View Recorded Sleep Time and Level of Sleepiness
+## Setup
+- Installing Ionic Command Line Interface (CLI): ```npm install -g ionic```
+- Running the app: ```ionic serve```
 
-**Native Device**\
-Social Sharing Plugin enable Data Sharing
+## Summary
+### Log Overnight Sleep
+- Log what time the user went to bed and when the user woke up with datetime pickers
 
-**Capacitor Storage**\
-Local Storage
+### Log Sleepiness During the Day
+- log how sleepy the user feel throughout the day according to the Stanford Sleepiness Scale, on the scale of 1-7 with range sliders
 
-# References #
-https://ionicframework.com/docs/api/button
-https://ionicframework.com/docs/api/card
-https://ionicframework.com/docs/api/datetime
-https://ionicframework.com/docs/api/item
-https://ionicframework.com/docs/api/list
-https://ionicframework.com/docs/api/range
-https://ionicframework.com/docs/api/tabs
-https://ionicframework.com/docs/api/toggle
-https://ionicframework.com/docs/api/toolbar
-https://github.com/ionic-team/ionic-storage
-https://capacitorjs.com/docs/apis/share
-https://ionicframework.com/docs/theming/css-variables
-https://ionicframework.com/docs/theming/color-generator
+### View Logged Data
+- View the overnight sleep and sleepiness data together or separately with toggles
+
+### Native Device Resource
+- Use the social sharing plugin to allow the user to text their friend with sleep data
+
+### Store Logged Data
+- Back up logged data with local storage
+
